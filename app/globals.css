@@ -2,32 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: white;
+  width: 100%;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-xxs {
+    font-size: 10px;
+  }
+
+  .text-gray-gray5 {
+    --tw-text-opacity: 1;
+    color: rgb(106 115 125 / var(--tw-text-opacity));
+  }
+
+  .text-gray-gray3 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 218 / var(--tw-text-opacity));
+  }
+
+  .text-red-red1 {
+    --tw-text-opacity: 1;
+    color: rgb(255 234 234 / var(--tw-text-opacity));
+  }
+
+  .text-green-green1 {
+    --tw-text-opacity: 1;
+    color: rgb(226 245 234 / var(--tw-text-opacity));
+  }
+
+  .bg-gray-gray0 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 251 252 / var(--tw-bg-opacity));
+  }
+
+  .bg-gray-gray1 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(246 248 250 / var(--tw-bg-opacity));
+  }
+
+  .bg-gray-gray2 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(225 228 232 / var(--tw-bg-opacity));
+  }
+
+  .bg-red-red1 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 234 234 / var(--tw-text-opacity));
+  }
+
+  .bg-green-green1 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(226 245 234 / var(--tw-text-opacity));
+  }
+
+  .border-primaryBorder {
+    --tw-border-opacity: 1;
+    border-color: rgb(225 228 232 / var(--tw-border-opacity));
+  }
+
+  .border-gray-gray3 {
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 218 / var(--tw-border-opacity));
+  }
+
+  .border-red-red1 {
+    --tw-text-opacity: 1;
+    border-color: rgb(255 234 234 / var(--tw-text-opacity));
+  }
+
+  .border-green-green1 {
+    --tw-text-opacity: 1;
+    border-color: rgb(226 245 234 / var(--tw-text-opacity));
   }
 }
