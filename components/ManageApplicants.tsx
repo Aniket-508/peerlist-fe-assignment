@@ -35,10 +35,10 @@ const actionItems = [
 function JobHeader() {
   return (
     <div className="border-b border-primaryBorder lg:p-6 p-4 bg-gray-gray0">
-      <div className="mb-4 flex justify-between">
-        <div className="flex item-center gap-4">
+      <div className="relative mb-4 flex justify-between">
+        <div className="flex lg:flex-row flex-col item-center gap-4">
           <Link
-            className="inline-flex"
+            className="inline-flex h-fit"
             rel="noreferrer"
             target="_blank"
             href="https://peerlist.io/?ref=peerlist"
@@ -67,14 +67,14 @@ function JobHeader() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-[10px]">
+        <div className="flex items-center gap-[10px] lg:relative absolute top-0 right-0">
           {actionItems.map((item, index) => (
             <IconButton key={index}>{item.icon}</IconButton>
           ))}
         </div>
       </div>
-      <div className="pl-[74px] flex py-4 justify-between">
-        <div className="flex gap-6 flex-wrap">
+      <div className="flex lg:flex-row flex-col py-4 justify-between lg:pl-[74px] pl-0 lg:gap-0 gap-2">
+        <div className="flex lg:gap-6 gap-2 flex-wrap">
           <p className="text-gray-gray7 font-normal text-xs mb-0.5">
             <span className="font-medium">78</span> Candidates
           </p>
@@ -273,7 +273,7 @@ export default function ManageApplicants() {
   };
 
   return (
-    <div className="w-full lg:pl-[212px] border-r border-primaryBorder">
+    <div className="w-full lg:pl-[212px] lg:pb-0 pb-16 border-r border-primaryBorder">
       <JobHeader />
       <div className="border-b border-primaryBorder">
         <div className="px-4 pt-4 sm:pt-6 sm:px-6">

@@ -74,87 +74,114 @@ function SidebarItem({ label, text, className, icon }: SidebarItemProps) {
   );
 }
 
-export default function Sidebar() {
+function MobileSidebar() {
   return (
-    <div className="w-[212px] border-r border-primaryBorder flex-col flex-shrink-0 fixed h-screen lg:flex justify-between hidden">
-      <div className="relative my-3">
-        <Image
-          src="https://dqy38fnwh4fqs.cloudfront.net/website/peerlist-logo-full.svg"
-          alt="Peerlist"
-          loading="lazy"
-          width={124}
-          height={32}
-        />
-      </div>
-      <div className="pr-6 flex flex-col h-full overflow-y-auto mt-6">
-        {sidebarItems.map((item, index) => (
-          <SidebarItem
-            key={index}
-            label={item.label}
-            icon={item.icon}
-            className={item.className}
-            text={item.text}
-          />
-        ))}
-      </div>
-      <div className="py-2 flex flex-col justify-start">
-        <div className="text-gray-gray5 text-xxs lg:mb-1 mb-6 font-semibold text-left mr-4">
-          <a href="/blog" className="">
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              Blog
-            </span>
-          </a>
-          &nbsp;•&nbsp;
-          <a target="_blank" rel="noreferrer" href="mailto:support@peerlist.io">
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              Support
-            </span>
-          </a>
-          &nbsp;•&nbsp;
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://peerlist.notion.site/Help-Center-c27eb4165a1b4d7a98422123e782a50d?pvs=4"
-          >
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              Help
-            </span>
-          </a>
-          &nbsp;•&nbsp;
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://peerlist.notion.site/Peerlist-Terms-Conditions-29dfa233548048ffa097b5e5784dac57"
-          >
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              T&amp;C
-            </span>
-          </a>
-          <br />
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://peerlist.notion.site/Peerlist-Code-of-Conduct-3322d049c1284d0a8735c451e1b4efdb"
-          >
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              Code of Conduct
-            </span>
-          </a>
-          &nbsp;•&nbsp;
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://peerlist.notion.site/Peerlist-Privacy-Policy-15ecedf717e742288cb640b6ec157ac5"
-          >
-            <span className="text-light focus:outline-none hover:text-primary hover:underline ">
-              Privacy
-            </span>
-          </a>
+    <div className="lg:hidden block">
+      <div className="w-full fixed bottom-0 z-50 bg-white">
+        <div className="grid grid-cols-5 w-full px-3 py-2 border-t border-primaryBorder">
+          {sidebarItems.slice(0, 5).map((item, index) => (
+            <SidebarItem
+              key={index}
+              label={item.label}
+              icon={item.icon}
+              className={item.className}
+              text={item.text}
+            />
+          ))}
         </div>
-        <p className="text-gray-gray5 text-xxs text-left">
-          © 2024 Peerlist, Inc. • v1.0.0
-        </p>
       </div>
     </div>
+  );
+}
+
+export default function Sidebar() {
+  return (
+    <>
+      <div className="w-[212px] border-r border-primaryBorder flex-col flex-shrink-0 fixed h-screen lg:flex justify-between hidden">
+        <div className="relative my-3">
+          <Image
+            src="https://dqy38fnwh4fqs.cloudfront.net/website/peerlist-logo-full.svg"
+            alt="Peerlist"
+            loading="lazy"
+            width={124}
+            height={32}
+          />
+        </div>
+        <div className="pr-6 flex flex-col h-full overflow-y-auto mt-6">
+          {sidebarItems.map((item, index) => (
+            <SidebarItem
+              key={index}
+              label={item.label}
+              icon={item.icon}
+              className={item.className}
+              text={item.text}
+            />
+          ))}
+        </div>
+        <div className="py-2 flex flex-col justify-start">
+          <div className="text-gray-gray5 text-xxs lg:mb-1 mb-6 font-semibold text-left mr-4">
+            <a href="/blog" className="">
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                Blog
+              </span>
+            </a>
+            &nbsp;•&nbsp;
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:support@peerlist.io"
+            >
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                Support
+              </span>
+            </a>
+            &nbsp;•&nbsp;
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://peerlist.notion.site/Help-Center-c27eb4165a1b4d7a98422123e782a50d?pvs=4"
+            >
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                Help
+              </span>
+            </a>
+            &nbsp;•&nbsp;
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://peerlist.notion.site/Peerlist-Terms-Conditions-29dfa233548048ffa097b5e5784dac57"
+            >
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                T&amp;C
+              </span>
+            </a>
+            <br />
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://peerlist.notion.site/Peerlist-Code-of-Conduct-3322d049c1284d0a8735c451e1b4efdb"
+            >
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                Code of Conduct
+              </span>
+            </a>
+            &nbsp;•&nbsp;
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://peerlist.notion.site/Peerlist-Privacy-Policy-15ecedf717e742288cb640b6ec157ac5"
+            >
+              <span className="text-light focus:outline-none hover:text-primary hover:underline ">
+                Privacy
+              </span>
+            </a>
+          </div>
+          <p className="text-gray-gray5 text-xxs text-left">
+            © 2024 Peerlist, Inc. • v1.0.0
+          </p>
+        </div>
+      </div>
+      <MobileSidebar />
+    </>
   );
 }
